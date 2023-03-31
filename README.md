@@ -32,9 +32,9 @@ To compile the source code below I recommand the fortran compiler GNU Fortran (G
  
  This will execute the Airfoil 1.0 executable file in the current working directory 
  
- * To compile the Airfoil 1.0 Fortran source code using the gfortran compiler, you can use the following command : gfortran Airfoil.f95 -o Airfoil
+ * To compile the Airfoil 1.0 Fortran source code using the gfortran compiler, you can use the following command : "gfortran Airfoil.f95 -o Airfoil"
 
- * To generate a standalone executable file for Airfoil 1.0 using the gfortran compiler, you can use the following command : gfortran -static Airfoil.f95 -o Airfoil
+ * To generate a standalone executable file for Airfoil 1.0 using the gfortran compiler, you can use the following command : "gfortran -static Airfoil.f95 -o Airfoil"
 
            
 # License
