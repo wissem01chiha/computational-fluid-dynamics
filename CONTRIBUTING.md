@@ -2,8 +2,7 @@
 
 #### **Did you find a bug?**
 
-* Is it a bug in E3SM code? E3SM includes several codes that are developed
-externally. 
+* Is it a bug in the code?
 See [LICENSE](LICENSE) for
 locations and, if appropriate, report your bug in the original developers site.
 

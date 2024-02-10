@@ -1,4 +1,7 @@
-# Airfoil 1.0.0
+# Airfoil 1.0
+![GitHub License](https://img.shields.io/github/license/wissem01chiha/FlowSim)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/t/wissem01chiha/FlowSim)
+![GitHub Repo stars](https://img.shields.io/github/stars/wissem01chiha/FlowSim)  
  Welcome to "Airfoil 1.0," an open-source Fortran 95 standalone application aimed at developing new solutions for optimizing the shapes of aircraft wings.
  My goal is to provide a simple and easy-to-use application for students and engineers to perform complex aerodynamic optimization analysis.
   
