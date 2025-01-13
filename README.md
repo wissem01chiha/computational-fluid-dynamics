@@ -1,58 +1,95 @@
-# Airfoil 1.0
-![GitHub License](https://img.shields.io/github/license/wissem01chiha/FlowSim)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/t/wissem01chiha/FlowSim)
-![GitHub Repo stars](https://img.shields.io/github/stars/wissem01chiha/FlowSim)  
- Welcome to "Airfoil 1.0," an open-source Fortran 95 standalone application aimed at developing new solutions for optimizing the shapes of aircraft wings.
- My goal is to provide a simple and easy-to-use application for students and engineers to perform complex aerodynamic optimization analysis.
-  
-## Installation
- To install the application, please follow these steps:
 
-* Click on the link below to download the project executable files:
-*  https://drive.google.com/file/d/1iDMlaMpPCSBUW9uhPZHJR92B5l6HsUUA/view?usp=share_link 
-* Save the downloaded files to a directory of your choice.
- * Extract "Airfoil.rar" in an empty folder 
- * Run Airfoil.exe 
- * The calculation results for "Airfoil 1.0" will be generated in the current working directory. 
- * Please ensure that you have write permissions in the current working directory before running the application. !
- * Enjoy !
- 
- 
- ## Usage 
-To use the application follow these steps:
-  * Enter the airfoil shape parameters (chord length, camber,...) 
-  * Enter the flow conditions  (fuild density ,airspeed,...)
-  * Enter the solver parameters ( nodes number , interpolation error ,...)
-  * The app will generate a ".txt" file for the analysis report 
-  * Calculations data are generated in ".csv" files for each variable (pressure, velocity,...)
-  
-## Development Contributions
-The acutal version perform only static calculations.The project is still under development to integrate  new innovative optimisation tools as well as turbulence modeling.Contributions to this project are welcome
-## Prerequisites
-To compile the source code below I recommand the fortran compiler GNU Fortran (GFortran) and Visual Studio code with Modern Fortran extension  
- ## Run commands 
- * To run Airfoil 1.0, you can use the following command in the terminal or command prompt: " ./Airfoil"
- 
- This will execute the Airfoil 1.0 executable file in the current working directory 
- 
- * To compile the Airfoil 1.0 Fortran source code using the gfortran compiler, you can use the following command : "gfortran Airfoil.f95 -o Airfoil"
+deformable structure from motion :
 
- * To generate a standalone executable file for Airfoil 1.0 using the gfortran compiler, you can use the following command : "gfortran -static Airfoil.f95 -o Airfoil"
 
-           
-##  License
-This project is licensed under the GNU  License - see the LICENSE file for details.
 
-## References 
- I do like CFD VOL 1: Katate Masatsuka : 2009
- 
- http://ossanworld.com/cfdbooks/cfdcodes.html
+x = K[R t] X R(3*3) t(3*1) K(3*3) X(x,y,z,1)
 
-## Contributing
-Please see the [contributing](CONTRIBUTING.md) guide.  
-Also, please feel free to mail to :  
+The translation matrix in 3D space (using homogeneous coordinates) is:
 
-- chihawissem08@gmail.com  
-- wissem.chiha@ept.ucar.tn
+$
+T = \begin{pmatrix}
+1 & 0 & 0 & t_x \\
+0 & 1 & 0 & t_y \\
+0 & 0 & 1 & t_z \\
+0 & 0 & 0 & 1
+\end{pmatrix}
+$
 
- 
+Where \( t_x, t_y, t_z \) represent the translations along the x, y, and z axes, respectively.
+
+
+$
+R_x(\theta) = \begin{pmatrix}
+1 & 0 & 0 \\
+0 & \cos(\theta) & -\sin(\theta) \\
+0 & \sin(\theta) & \cos(\theta)
+\end{pmatrix}
+$
+
+
+$
+R_y(\theta) = \begin{pmatrix}
+\cos(\theta) & 0 & \sin(\theta) \\
+0 & 1 & 0 \\
+-\sin(\theta) & 0 & \cos(\theta)
+\end{pmatrix}
+$
+
+$
+R_z(\theta) = \begin{pmatrix}
+\cos(\theta) & -\sin(\theta) & 0 \\
+\sin(\theta) & \cos(\theta) & 0 \\
+0 & 0 & 1
+\end{pmatrix}
+$
+
+The scaling matrix for non-uniform scaling in 3D is:
+
+$
+S = \begin{pmatrix}
+s_x & 0  & 0  & 0 \\
+0  & s_y & 0  & 0 \\
+0  & 0  & s_z & 0 \\
+0  & 0  & 0  & 1
+\end{pmatrix}
+$
+
+Where \( s_x, s_y, s_z \) are the scaling factors along the x, y, and z axes.
+
+
+The shearing matrix can distort an object along the axes and is represented as:
+
+$
+Sh = \begin{pmatrix}
+1 & sh_{xy} & sh_{xz} & 0 \\
+sh_{yx} & 1 & sh_{yz} & 0 \\
+sh_{zx} & sh_{zy} & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{pmatrix}
+$
+
+Where \( sh_{xy}, sh_{xz}, sh_{yx}, sh_{yz}, sh_{zx}, sh_{zy} \) are the shear factors that control the distortion along the respective axes.
+
+To combine translation, rotation, and scaling transformations, the final transformation matrix is the product of these matrices:
+
+$
+M = T \times R \times S
+$
+
+Where \( T \), \( R \), and \( S \) are the translation, rotation, and scaling matrices, respectively.
+
+Datasets
+----------
+
+[1](https://wuminye.github.io/NHR/datasets.html)
+
+[2](https://www.cs.toronto.edu/~kyros/soft-data/dynamic/index.html)
+
+each folder frame %d is the capture from all images of the time t : 0->200s
+for 57 camera each capture
+[4](https://github.com/wuminye/NHR)
+
+softwares
+-----------
+[Berkly-sfm](https://github.com/erik-nelson/berkeley_sfm)
