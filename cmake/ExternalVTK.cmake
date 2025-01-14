@@ -4,7 +4,6 @@ find_package(VTK REQUIRED)
 
 if (NOT VTK_FOUND)
    message(FATAL_ERROR "Unable to find the VTK build folder.")
-   message(WARNING "Default VTK build  is not supported : manual installation is required.")
 else()
    message(STATUS "VTK Found : ${VTK_DIR}")
 endif()
@@ -24,7 +23,6 @@ find_package(VTK COMPONENTS
    RenderingOpenGL2
    RenderingUI
 )
-
 if(WIN32)
    set(CMAKE_NINJA_FORCE_RESPONSE_FILE "ON" CACHE BOOL "Force Ninja to use response files.")
 endif(WIN32)

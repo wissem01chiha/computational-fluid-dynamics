@@ -1,0 +1,4 @@
+Diagnostics:
+  ClangTidy:
+    CheckOptions:
+      readability-identifier-naming.VariableCase: CamelCase

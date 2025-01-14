@@ -1,8 +1,6 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
 
-project(DynaSfM VERSION 1.0.0)
-
-set(USE_CUDA  OFF)
+project(4DSfM VERSION 1.0.0)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -10,9 +8,8 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_INSTALL_PREFIX ${CMAKE_BINARY_DIR})
 
-set(BUILD_SHARED_LIBS  OFF)
-set(BUILD_TESTS        OFF)
-set(USE_VTK            OFF)
+set(BUILD_SHARED_LIBS OFF)
+set(BUILD_TESTS ON)
 
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Debug)
@@ -33,22 +30,20 @@ endif()
 set(CMAKE_SUPPRESS_DEVELOPER_WARNINGS 1)
 
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
-include(External-Eigen)
-#include (External-OpenCV)
+include(ExternalEigen)
+include (ExternalOpenCV)
+include(ExternalVTK)
+include(ExternalPCL)
 
 if (BUILD_TESTS)
-    include(External-GTest)
+    include(ExternalGTest)
 endif()
 
-if(USE_VTK)
-    include(External-VTK)
-endif(USE_VTK)
-
-add_subdirectory(extern/loguru)
-add_subdirectory(extern/cnpy)
+add_subdirectory(3rdparty/loguru)
+add_subdirectory(3rdparty/cnpy)
 
 if (BUILD_SHARED_LIBS)
-    set_target_properties(tinyurdf PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)
+    set_target_properties(4DSfM PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)
 endif()
 
 if (BUILD_TESTS)
