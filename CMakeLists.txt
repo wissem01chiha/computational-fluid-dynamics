@@ -33,14 +33,13 @@ set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
 include(ExternalEigen)
 include (ExternalOpenCV)
 include(ExternalVTK)
-include(ExternalPCL)
+include(ExternalGlog)
+
+add_subdirectory(3rdparty/cnpy)
 
 if (BUILD_TESTS)
     include(ExternalGTest)
 endif()
-
-add_subdirectory(3rdparty/loguru)
-add_subdirectory(3rdparty/cnpy)
 
 if (BUILD_SHARED_LIBS)
     set_target_properties(4DSfM PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)

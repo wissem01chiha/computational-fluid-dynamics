@@ -1,5 +1,5 @@
 #include "../../include/geometry/pose.h"
-#include <iostream>
+#include <ostream>
 
 Pose::Pose() {
   Rt_ = Eigen::Matrix4d::Identity();
@@ -113,7 +113,6 @@ Eigen::Vector3d Pose::axisAngle() const {
   if (axis.isApprox(Eigen::Vector3d::Zero(), 1e-16)) {
     return axis;
   }
-
   axis /= axis.norm();
   return axis * angle;
 }
@@ -179,13 +178,13 @@ void Pose::translateZ(double dz) {
   Rt_(2, 3) += dz;
 }
 
-void Pose::print(const std::string& prefix) const {
-  if (!prefix.empty()) {
-    std::cout << prefix << std::endl;
-  }
-  std::cout << Rt_ << std::endl;
+void Pose::print(std::ostream os) const {
+  
+  os << Rt_;
 }
 
 Pose Pose::delta(const Pose& rhs) const {
   return this->inverse() * rhs;
 }
+
+Pose::~Pose(){}

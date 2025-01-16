@@ -1,9 +1,7 @@
 cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
-
 if(NOT OpenCV_TAG)
     set(OpenCV_TAG "4.10.0")
 endif()
-
 set(OpenCV_INSTALL_DIR ${CMAKE_BINARY_DIR}/opencv-install)
 set(CMAKE_PREFIX_PATH ${OpenCV_INSTALL_DIR})
 find_package(OpenCV)

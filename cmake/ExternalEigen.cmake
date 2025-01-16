@@ -1,7 +1,5 @@
 cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
-
 find_package(Eigen3 QUIET)
-
 if(Eigen3_FOUND)
     message(STATUS "Eigen3 found: ${EIGEN3_INCLUDE_DIR}")
 else()

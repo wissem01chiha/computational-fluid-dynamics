@@ -1,13 +1,10 @@
 cmake_minimum_required(VERSION 3.22.1 FATAL_ERROR)
-
 find_package(VTK REQUIRED)
-
 if (NOT VTK_FOUND)
    message(FATAL_ERROR "Unable to find the VTK build folder.")
 else()
    message(STATUS "VTK Found : ${VTK_DIR}")
 endif()
-
 find_package(VTK COMPONENTS 
    CommonColor
    CommonCore
