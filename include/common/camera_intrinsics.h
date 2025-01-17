@@ -1,8 +1,9 @@
 #pragma once 
 
-#include <eigen3/Eigen/Dense>
-#include <glog/logging.h>
 #include <omp.h>
+
+#include <Eigen/Dense>
+#include <glog/logging.h>
 
 class CameraIntrinsics {
 public:

@@ -2,7 +2,7 @@
 
 #include <ostream>
 #include <iostream>
-#include <eigen3/Eigen/Dense>
+#include <Eigen/Dense>
 #include "../util/types.h"
 
 class Pose {

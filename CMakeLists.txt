@@ -14,7 +14,6 @@ set(BUILD_TESTS ON)
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Debug)
 endif()
-
 if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
     if(CMAKE_BUILD_TYPE STREQUAL "Debug")
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0 -g -DDEBUG")
@@ -36,17 +35,13 @@ include(ExternalVTK)
 include(ExternalGlog)
 
 add_subdirectory(3rdparty/cnpy)
-
-if (BUILD_TESTS)
-    include(ExternalGTest)
-endif()
+add_subdirectory(src)
 
 if (BUILD_SHARED_LIBS)
     set_target_properties(4DSfM PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)
 endif()
-
 if (BUILD_TESTS)
+    include(ExternalGTest)
     add_subdirectory(test)
 endif(BUILD_TESTS)
-
 install(DIRECTORY ${CMAKE_SOURCE_DIR}/include DESTINATION include)

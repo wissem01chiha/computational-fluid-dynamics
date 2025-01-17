@@ -2,7 +2,7 @@
 
 #include <omp.h>
 
-inline void frobenius_error(const double *R, double* frobenius_error) {
+inline void frobeniusError(const double *R, double* frobenius_error) {
     #pragma omp parallel for
     for (int i = 0; i < 3; ++i) {
         for (int j = 0; j < 3; ++j) {

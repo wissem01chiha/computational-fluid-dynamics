@@ -1,7 +1,7 @@
 #pragma once
 
+#include <Eigen/Dense>
 #include <glog/logging.h>
-#include <eigen3/Eigen/Core>
 #include "../geometry/pose.h"
 #include "../util/types.h"
 
