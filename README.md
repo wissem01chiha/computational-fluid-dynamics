@@ -4,6 +4,7 @@ TinyURDF
 
 [![cmake-build](https://github.com/wissem01chiha/tinyurdf/actions/workflows/cmake-build.yml/badge.svg)](https://github.com/wissem01chiha/tinyurdf/actions/workflows/cmake-build.yml)
 [![build-docs](https://github.com/wissem01chiha/tinyurdf/actions/workflows/build-docs.yml/badge.svg)](https://github.com/wissem01chiha/tinyurdf/actions/workflows/build-docs.yml)
+[![cpplint](https://github.com/wissem01chiha/tinyurdf/actions/workflows/cpp-lint.yml/badge.svg)](https://github.com/wissem01chiha/tinyurdf/actions/workflows/cpp-lint.yml)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/t/wissem01chiha/tinyurdf)
 ![GitHub last commit](https://img.shields.io/github/last-commit/wissem01chiha/tinyurdf)
 ![GitHub License](https://img.shields.io/github/license/wissem01chiha/tinyurdf)
@@ -15,7 +16,7 @@ TinyURDF
 </div>
 
 
-TinyURDF is a modern, fast, cross-platform C++17 library for parsing and visualizing [URDF](https://wiki.ros.org/urdf/Tutorials) model files. It is designed to handle custom multibody configurations that existing tools do not support, including parallel multibodies or graph-like robots. The library has no external dependencies and provides a stable and simple API for loading, visualizing, and verifying robot models.
+TinyURDF is a modern, fast, cross-platform c++17 library for parsing and visualizing [URDF](https://wiki.ros.org/urdf/Tutorials) model files. It is designed to handle custom multibody configurations that existing tools do not support, including parallel multibodies or graph-like structures, it has no external dependencies and provides a stable and simple API for loading, visualizing, and verifying multijoint models.
 
 <!-- omit in toc -->
 Table of Contents
