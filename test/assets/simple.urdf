@@ -1,0 +1,443 @@
+<?xml version="1.0"?>
+<robot  name="s-model_articulated">
+
+  <link name="finger_1_link_0">
+    <collision>
+      <origin xyz="30 0 0" rpy = "0 0 0"/>
+      <geometry type ="mesh" filename="/home/wissem/tinyurdf/exemples/.urdf/cali-bee.stl" scale="0.1 0.1 0.1"/>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="1.020 2.63 0"/>
+      <geometry type = "sphere" radius="1"/>
+      <material name="Cyan">
+        <color rgba="1.0 0.01 0.0 1.0"/>
+        <texture  filename = "file1.STL" />
+        <density value = "1.0" />
+      </material>
+    </visual>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.05"/>
+      <inertia ixx="0.01" ixy="-0.00002" ixz="0.00001" iyy="0.0008" iyz="0" izz="0.001"/>
+    </inertial>
+  </link>
+
+
+  <link name="finger_1_link_1">
+    <visual>
+      <origin rpy="0 0 -0.52" xyz="1.050 -2.028 0"/>
+      <geometry type = "sphere" radius="1.5"/>
+      <material name="Cyan">
+        <color rgba="0 1.0 1.0 1.0"/>
+        <texture  filename = "file1.STL" />
+        <density value = "1.0" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 -0.52" xyz="0.03 -3.0145 0"/>
+      <geometry type = "sphere" radius="1"/>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.15"/>
+      <inertia ixx="0.001859" ixy="-0.000376" ixz="0.000028" iyy="0.012756" iyz="0" izz="0.0024"/>
+    </inertial>
+  </link>
+
+
+  <link name="finger_1_link_2">
+    <visual>
+      <origin rpy="0 0 0" xyz="7.039 3 0.0075"/>
+      <geometry type = "box" size = "5.028 3.01 8.03"/>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.02 0.0025 -0.0005"/>
+      <geometry type = "sphere" radius="1"/>
+      <material name="Cyan">
+        <color rgba="0 1.0 1.0 1.0"/>
+        <texture  filename = "file1.STL" />
+        <density value = "1.0" />
+      </material>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.15"/>
+      <inertia ixx="0.001859" ixy="-0.000376" ixz="0.000028" iyy="0.012756" iyz="0" izz="0.0024"/>
+    </inertial>
+  </link>
+
+
+  <link name="finger_1_link_3">
+    <visual>
+      <origin rpy="0 0 0.52" xyz="0.2 1 1.2"/>
+      <geometry type = "cylinder" radius="1" length="2.1"/>
+      <material name="Cyan">
+        <color rgba="0 1.0 1.0 1.0"/>
+        <texture  filename = "file1.STL" />
+        <density value = "1.0" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 .52" xyz="0.02 0.015 0"/>
+      <geometry type = "box" size = ".028 .01 .03"/>
+      <material name="yellow"/>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.05"/>
+      <inertia ixx="0.001239" ixy="-0.000251" ixz="0.000019" iyy="0.00085" iyz="0" izz="0.001632"/>
+    </inertial>
+  </link>
+
+  <joint name="finger_1_joint_0" type="revolute">
+    <parent link="finger_1_link_0"/>
+    <child link="finger_1_link_1"/>
+    <axis xyz="0 0 5"/>
+    <origin rpy="8 1 2" xyz="5.020 2 3"/>
+    <limit effort="100" lower="0" upper="1.055" velocity="100"/>
+    <calibration rising="0.0" falling ="0.0"/>
+    <mimic joint = "joint_1" offset ="1.0" multiplier = "1.0" />
+    <dynamics damping="0.0" friction="0.0"/>
+    <safety_controller k_velocity="10" k_position="15" soft_lower_limit="-2.0" soft_upper_limit="0.5"/>
+  </joint>
+
+  <joint name="finger_1_joint_1" type="revolute">
+    <parent link="finger_1_link_1"/>
+    <child link="finger_1_link_2"/>
+    <axis xyz="0 3.2 6"/>
+    <origin rpy="0 0 -0.52" xyz="20.050 10.028 20"/>
+    <limit effort="100" lower="0" upper="1.5708" velocity="100"/>
+    <calibration rising="0.0" falling ="0.0"/>
+    <mimic joint = "joint_1" offset ="1.0" multiplier = "1.0" />
+    <dynamics damping="0.0" friction="0.0"/>
+    <safety_controller k_velocity="10" k_position="15" soft_lower_limit="-2.0" soft_upper_limit="0.5"/>
+  </joint>
+
+  <joint name="finger_1_joint_2" type="revolute">
+    <parent link="finger_1_link_2"/>
+    <child link="finger_1_link_3"/>
+    <axis xyz="-3.2 0 1"/>
+    <origin rpy="0 0 0" xyz="0.039 0 0"/>
+    <limit effort="100" lower="-0.7854" upper="3.1416" velocity="100"/>
+    <calibration rising="0.0" falling ="0.0"/>
+    <mimic joint = "joint_1" offset ="1.0" multiplier = "1.0" />
+    <dynamics damping="0.0" friction="0.0"/>
+    <safety_controller k_velocity="10" k_position="15" soft_lower_limit="-2.0" soft_upper_limit="0.5"/>
+  </joint>
+
+  <link name="finger_2_link_0">
+    <visual>
+      <origin rpy="0 0 0" xyz="1.020 1 1"/>
+      <geometry type ="mesh" filename="/home/wissem/tinyurdf/exemples/.urdf/cali-bee.stl" scale="0.1 0.1 0.1"/>
+      <material name="black">
+        <color rgba="0.528 .02 .2 2"/>
+      </material>
+    </visual>
+    <collision>
+        <origin xyz="-0.0455 0.0414 0.036" rpy="0 1.1416 -1.57"/>
+        <geometry type ="sphere" radius="1"/>
+        <material name="yellow">
+          <color rgba="0 1 1 1"/>
+        </material>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.05"/>
+      <inertia ixx="0.01" ixy="-0.00002" ixz="0.00001" iyy="0.0008" iyz="0" izz="0.001"/>
+    </inertial>
+  </link>
+
+
+  <link name="finger_2_link_1">
+    <visual>
+      <origin rpy="0 0 -0.52" xyz="1.050 2.028 3"/>
+      <geometry type ="mesh" filename="/home/wissem/tinyurdf/exemples/.urdf/cali-bee.stl" scale="0.1 0.1 0.1"/>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 -0.52" xyz="0.03 -0.0145 0"/>
+      <geometry type = "box" size = ".028 .01 .03"/>
+      <material name="yellow"/>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.15"/>
+      <inertia ixx="0.001859" ixy="-0.000376" ixz="0.000028" iyy="0.012756" iyz="0" izz="0.0024"/>
+    </inertial>
+  </link>
+
+
+  <link name="finger_2_link_2">
+    <visual>
+      <origin rpy="0 0 0" xyz="-1.039 0 -2.0075"/>
+      <geometry type ="mesh" filename="/home/wissem/tinyurdf/exemples/.urdf/cali-bee.stl" scale="0.1 0.1 0.1"/>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.02 0.0025 -0.0005"/>
+       <geometry type = "box" size = ".028 .01 .03"/>
+      <material name="yellow"/>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.15"/>
+      <inertia ixx="0.001859" ixy="-0.000376" ixz="0.000028" iyy="0.012756" iyz="0" izz="0.0024"/>
+    </inertial>
+  </link>
+
+
+  <link name="finger_2_link_3">
+    <visual>
+      <origin rpy="1 0 0" xyz="1.2 0 1.5"/>
+      <geometry type = "sphere" radius="1"/>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="2 0.25 -0.05"/>
+      <geometry type = "sphere" radius="0.5"/>
+      <material name="Cyan">
+        <color rgba="0 1.0 1.0 1.0"/>
+        <texture  filename = "file1.STL" />
+        <density value = "1.0" />
+      </material>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.15"/>
+      <inertia ixx="0.001859" ixy="-0.000376" ixz="0.000028" iyy="0.012756" iyz="0" izz="0.0024"/>
+    </inertial>
+  </link>
+
+
+  <joint name="finger_2_joint_0" type="revolute">
+    <parent link="finger_2_link_0"/>
+    <child link="finger_2_link_1"/>
+    <axis xyz="1 1 1"/>
+    <origin rpy="02.5 0 0" xyz="10.20 20 3"/>
+    <limit effort="100" lower="0" upper="1.055" velocity="100"/>
+    <calibration rising="0.0" falling ="0.0"/>
+    <mimic joint = "joint_1" offset ="1.0" multiplier = "1.0" />
+    <dynamics damping="0.0" friction="0.0"/>
+    <safety_controller k_velocity="10" k_position="15" soft_lower_limit="-2.0" soft_upper_limit="0.5"/>
+  </joint>
+
+
+  <joint name="finger_2_joint_1" type="revolute">
+    <parent link="finger_2_link_1"/>
+    <child link="finger_2_link_2"/>
+    <axis xyz="0 -2 10"/>
+    <origin rpy="0 0 -0.52" xyz="7.050 -8.028 0"/>
+    <limit effort="100" lower="0" upper="1.5708" velocity="100"/>
+    <calibration rising="0.0" falling ="0.0"/>
+    <mimic joint = "joint_1" offset ="1.0" multiplier = "1.0" />
+    <dynamics damping="0.0" friction="0.0"/>
+    <safety_controller k_velocity="10" k_position="15" soft_lower_limit="-2.0" soft_upper_limit="0.5"/>
+  </joint>
+
+
+  <joint name="finger_2_joint_2" type="revolute">
+    <parent link="finger_2_link_2"/>
+    <child link="finger_2_link_3"/>
+    <axis xyz="0 7 5"/>
+    <origin rpy="0 0 0" xyz="0.039 0 0"/>
+    <limit effort="100" lower="-0.7854" upper="3.1416" velocity="100"/>
+    <calibration rising="0.0" falling ="0.0"/>
+    <mimic joint = "joint_1" offset ="1.0" multiplier = "1.0" />
+    <dynamics damping="0.0" friction="0.0"/>
+    <safety_controller k_velocity="10" k_position="15" soft_lower_limit="-2.0" soft_upper_limit="0.5"/>
+  </joint>
+
+
+  <link name="finger_middle_link_0">
+    <visual>
+      <origin rpy="0 0 0" xyz="0.039 0 1.0775"/>
+      <geometry type = "sphere" radius="1"/>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.02 0.0025 -0.0005"/>
+      <geometry type = "sphere" radius="1"/>
+      <material name="Cyan">
+        <color rgba="0 1.0 1.0 1.0"/>
+        <texture  filename = "file1.STL" />
+        <density value = "1.0" />
+      </material>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.15"/>
+      <inertia ixx="0.001859" ixy="-0.000376" ixz="0.000028" iyy="0.012756" iyz="0" izz="0.0024"/>
+    </inertial>
+  </link>
+
+
+  <link name="finger_middle_link_1">
+    <visual>
+      <origin rpy="0 0 0" xyz="3.0 0 0.75"/>
+      <geometry type = "sphere" radius="1"/>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.02 0.0025 -0.0005"/>
+      <geometry type = "sphere" radius="1"/>
+      <material name="Cyan">
+        <color rgba="0 1.0 1.0 1.0"/>
+        <texture  filename = "file1.STL" />
+        <density value = "1.0" />
+      </material>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.15"/>
+      <inertia ixx="0.001859" ixy="-0.000376" ixz="0.000028" iyy="0.012756" iyz="0" izz="0.0024"/>
+    </inertial>
+  </link>
+
+
+  <link name="finger_middle_link_2">
+    <visual>
+      <origin rpy="0 0 0" xyz="2.739 1.5 0.75"/>
+      <geometry type = "sphere" radius="1"/>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.02 0.0025 -0.0005"/>
+      <geometry type = "sphere" radius="1"/>
+      <material name="Cyan">
+        <color rgba="0 1.0 1.0 1.0"/>
+        <texture  filename = "file1.STL" />
+        <density value = "1.0" />
+      </material>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.15"/>
+      <inertia ixx="0.001859" ixy="-0.000376" ixz="0.000028" iyy="0.012756" iyz="0" izz="0.0024"/>
+    </inertial>
+  </link>
+
+
+  <link name="finger_middle_link_3">
+    <visual>
+      <origin rpy="0 0 0" xyz="3.9 0 0.75"/>
+      <geometry type = "sphere" radius="1"/>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.02 0.0025 -0.0005"/>
+      <geometry type = "sphere" radius="1"/>
+      <material name="Cyan">
+        <color rgba="0 1.0 1.0 1.0"/>
+        <texture  filename = "file1.STL" />
+        <density value = "1.0" />
+      </material>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.15"/>
+      <inertia ixx="0.001859" ixy="-0.000376" ixz="0.000028" iyy="0.012756" iyz="0" izz="0.0024"/>
+    </inertial>
+  </link>
+
+
+  <joint name="finger_middle_joint_0" type="revolute">
+    <parent link="finger_middle_link_0"/>
+    <child link="finger_middle_link_1"/>
+    <axis xyz="-5 0 1"/>
+    <origin rpy="0 0 0" xyz="2.0 0 0"/>
+    <limit effort="100" lower="0" upper="1.055" velocity="100"/>
+    <calibration rising="0.0" falling ="0.0"/>
+    <mimic joint = "joint_1" offset ="1.0" multiplier = "1.0" />
+    <dynamics damping="0.0" friction="0.0"/>
+    <safety_controller k_velocity="10" k_position="15" soft_lower_limit="-2.0" soft_upper_limit="0.5"/>
+  </joint>
+
+
+  <joint name="finger_middle_joint_1" type="revolute">
+    <parent link="finger_middle_link_1"/>
+    <child link="finger_middle_link_2"/>
+    <axis xyz="4 1.58 1"/>
+    <origin rpy="0 0 -0.52" xyz="5.0 -2.8 0"/>
+    <limit effort="100" lower="0" upper="1.5708" velocity="100"/>
+    <calibration rising="0.0" falling ="0.0"/>
+    <mimic joint = "joint_1" offset ="1.0" multiplier = "1.0" />
+    <dynamics damping="0.0" friction="0.0"/>
+    <safety_controller k_velocity="10" k_position="15" soft_lower_limit="-2.0" soft_upper_limit="0.5"/>
+  </joint>
+
+
+  <joint name="finger_middle_joint_2" type="revolute">
+    <origin rpy = "3.1416 2.7629 -4.9305" xyz="0 0 1.143" parent = "finger_middle_link_2"/>
+    <parent link="finger_middle_link_2"/>
+    <child link="finger_middle_link_3"/>
+    <axis xyz="0 0 1"/>
+    <origin rpy="0 0 0" xyz="0.039 0 0"/>
+    <limit effort="100" lower="-0.7854" upper="3.1416" velocity="100"/>
+    <calibration rising="0.0" falling ="0.0"/>
+    <mimic joint = "joint_1" offset ="1.0" multiplier = "1.0" />
+    <dynamics damping="0.0" friction="0.0"/>
+    <safety_controller k_velocity="10" k_position="15" soft_lower_limit="-2.0" soft_upper_limit="0.5"/>
+  </joint>
+
+  <link name="palm">
+    <visual>
+      <origin rpy="0 0 0" xyz="0.39 0 0.75"/>
+      <geometry type = "sphere" radius="1"/>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="4.2 2.25 -2"/>
+      <geometry type = "sphere" radius="1"/>
+      <material name="Cyan">
+        <color rgba="0 1.25 0.28 0.9"/>
+        <texture  filename = "file1.STL" />
+        <density value = "1.0" />
+      </material>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.15"/>
+      <inertia ixx="0.001859" ixy="-0.000376" ixz="0.000028" iyy="0.012756" iyz="0" izz="0.0024"/>
+    </inertial>
+  </link>
+
+
+  <joint name="palm_finger_1_joint" type="revolute">
+    <parent link="finger_middle_link_0"/>
+    <child link="finger_middle_link_1"/>
+    <axis xyz="-5 0 1"/>
+    <origin rpy="1 2 0" xyz="0.020 0 0"/>
+    <limit effort="100" lower="0" upper="1.055" velocity="100"/>
+    <calibration rising="0.0" falling ="0.0"/>
+    <mimic joint = "joint_1" offset ="1.0" multiplier = "1.0" />
+    <dynamics damping="0.0" friction="0.0"/>
+    <safety_controller k_velocity="10" k_position="15" soft_lower_limit="-2.0" soft_upper_limit="0.5"/>
+  </joint>
+
+  <joint name="palm_finger_2_joint" type="revolute">
+    <parent link="finger_middle_link_0"/>
+    <child link="finger_middle_link_1"/>
+    <axis xyz="-5 0 1"/>
+    <origin rpy="5 2 8" xyz="3.20 1 2"/>
+    <limit effort="100" lower="0" upper="1.055" velocity="100"/>
+    <calibration rising="0.0" falling ="0.0"/>
+    <mimic joint = "joint_1" offset ="1.0" multiplier = "1.0" />
+    <dynamics damping="0.0" friction="0.0"/>
+    <safety_controller k_velocity="10" k_position="15" soft_lower_limit="-2.0" soft_upper_limit="0.5"/>
+  </joint>
+
+  
+  <joint name="palm_finger_middle_joint" type="revolute">
+    <parent link="finger_middle_link_0"/>
+    <child link="finger_middle_link_1"/>
+    <axis xyz="-3.5 -2.2 1"/>
+    <origin rpy="0 0 0" xyz="0.020 0 0"/>
+    <limit effort="100" lower="0" upper="1.055" velocity="100"/>
+    <calibration rising="0.0" falling ="0.0"/>
+    <mimic joint = "joint_1" offset ="1.0" multiplier = "1.0" />
+    <dynamics damping="0.0" friction="0.0"/>
+    <safety_controller k_velocity="10" k_position="15" soft_lower_limit="-2.0" soft_upper_limit="0.5"/>
+  </joint>
+  
+</robot>

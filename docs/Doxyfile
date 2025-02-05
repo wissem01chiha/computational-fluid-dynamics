@@ -1,0 +1,68 @@
+#---------------------------------------------------------------------------
+# Project related configuration options
+#---------------------------------------------------------------------------
+DOXYFILE_ENCODING       = UTF-8
+PROJECT_NAME            = "TinyURDF"
+PROJECT_NUMBER          = 1.0.0
+PROJECT_BRIEF           = "A Modern C++ Library for Parsing and Visualizing URDF Model Files"
+PROJECT_LOGO            = 
+OUTPUT_DIRECTORY        = ./docs 
+OUTPUT_LANGUAGE         = English
+MARKDOWN_SUPPORT        = YES
+SHOW_NAMESPACES         = YES
+SEARCHENGINE            = YES
+FULL_SIDEBAR            = YES
+GENERATE_TREEVIEW       = YES
+HTML_COLORSTYLE         = LIGHT
+HTML_COLORSTYLE_HUE     = 210
+
+#---------------------------------------------------------------------------
+# Build related configuration options
+#---------------------------------------------------------------------------
+EXTRACT_ALL             = YES
+RECURSIVE               = YES
+GENERATE_HTML           = YES
+GENERATE_LATEX          = NO
+
+#---------------------------------------------------------------------------
+# Configuration options related to the input files
+#---------------------------------------------------------------------------
+INPUT                  =    ./src \  
+                            ./include \
+                            ./README.md \
+                            ./CONTRIBUTING.md \
+                            ./CHANGELOG.md \
+                            ./INSTALL.md \
+                            ./LICENSE
+INPUT_ENCODING         = UTF-8
+FILE_PATTERNS          = *.c \
+                         *.cc \
+                         *.cpp \
+                         *.h \
+                         *.hpp \
+                         *.md \
+                         *.txt
+#---------------------------------------------------------------------------
+# configuration options for main page of the documentation
+#---------------------------------------------------------------------------
+USE_MDFILE_AS_MAINPAGE = ./README.md
+HAVE_DOT = YES
+DOT_IMAGE_FORMAT     = svg
+DOT_GRAPH_MAX_NODES  = 100
+CLASS_GRAPH          = YES
+COLLABORATION_GRAPH  = YES
+HIDE_UNDOC_RELATIONS = NO
+TEMPLATE_RELATIONS   = YES
+INCLUDE_GRAPH        = YES
+INCLUDED_BY_GRAPH    = YES
+CLASS_DIAGRAMS       = YES
+DOT_TRANSPARENT      = YES
+GENERATE_LEGEND      = YES
+DOT_CLEAN_UP         = YES
+GENERATE_INDEX       = YES
+GRAPHICAL_HIERARCHY  = YES        
+MAX_DOT_GRAPH_DEPTH  = 40
+USE_MATHJAX          = YES
+GENERATE_BUGLIST     = YES
+SHOW_DIRECTORIES     = YES
+SHOW_INCLUDE_FILES   = YES

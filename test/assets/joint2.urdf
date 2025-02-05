@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<joint name="front_rail_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0.223 0 0.0805"/>
+    <parent link="body"/>
+    <child link="front_rail"/>
+</joint>

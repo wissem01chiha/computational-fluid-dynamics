@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<model name="composed-joint">
+
+    <link name="base_link_test">
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="5 1 1" />
+            </geometry> 
+        </collision>
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <box size="1 1 1" />
+            </geometry> 
+            <material name="Cyan">
+                <color rgba="1.0 0.01 56.0 1.0"/>
+                <texture filename="C:/Users/chiha/OneDrive/Documents/tinyurdf/test/valid_path.txt" />
+                <density value="7.0" />
+            </material>
+        </visual>
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <mass value="0.05"/>
+            <inertia ixx="0.01" ixy="-0.00002" ixz="0.00001" iyy="0.0008" iyz="0" izz="0.001"/>
+        </inertial>
+    </link>
+
+    <link name="base_link_2">
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="1" length="5"/>
+            </geometry>
+        </collision>
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <sphere radius="1"/>
+            </geometry> 
+            <material name="Cyan">
+                <color rgba="1.0 0.51 0.0 1.0"/>
+                <texture filename="C:/Users/chiha/OneDrive/Documents/tinyurdf/test/valid_path.txt" />
+                <density value="1.0" />
+            </material>
+        </visual>
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <mass value="0.05"/>
+            <inertia ixx="0.01" ixy="-0.00002" ixz="0.00001" iyy="0.0008" iyz="0" izz="0.001"/>
+        </inertial>
+    </link>
+
+    <joint name="joint_1" type="revolute">
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <parent link="base_link_test"/>
+        <child link="shoulder_link"/>
+        <axis xyz="0 1 0"/>
+        <limit effort="39" velocity="1.3963"/>
+        <calibration rising="0.0" falling="0.0"/>
+        <dynamics damping="0.0" friction="0.0"/>
+        <safety_controller k_velocity="10" k_position="15" soft_lower_limit="-2.0" soft_upper_limit="0.5"/>
+    </joint>
+
+    <link name="shoulder_link"> 
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="1"/>
+            <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.3" length="0.5"/>
+            </geometry>   
+            <material name="Cyan">
+                <color rgba="1.05 1.0 0.25 0.0"/>
+                <texture filename="C:/Users/chiha/OneDrive/Documents/tinyurdf/test/valid_path.txt" />
+                <density value="1.0" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="1" length="0.5"/>
+            </geometry>  
+        </collision>
+    </link>
+
+</model>

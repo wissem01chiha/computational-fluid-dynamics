@@ -1,0 +1,31 @@
+name: cpplint
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Python and pip
+        run: |
+          sudo apt update
+          sudo apt upgrade -y
+          sudo apt install python3-pip -y
+
+      - name: Install cpplint
+        run: |
+          sudo pip3 install cpplint
+
+      - name: Run cpplint
+        run: |
+          cpplint include/**/*.cpp src/**/*.cpp script/**/*.cpp
