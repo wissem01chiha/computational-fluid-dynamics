@@ -28,5 +28,4 @@ public:
  private:
   std::shared_ptr<Mesh> p_;
 };
-
 #endif  // INCLUDE_TINYURDF_GEOMETRY_MESH_PARSER_H_

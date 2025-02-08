@@ -11,6 +11,9 @@ set(TINYURDF_LIBRARY_SOURCES
    material.cc
    box.cc
    box_parser.cc
+   sphere_parser.cc
+   pose_parser.cc
+   cylinder_parser.cc
    cylinder.cc
    sphere.cc
    mesh.cc

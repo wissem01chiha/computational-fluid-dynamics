@@ -17,7 +17,6 @@ public:
     void setEffort(double effort_);
     void setVelocity(double vel_);
 private:
-
     double lower, upper, effort, velocity;
 };
 #endif // TINYURDF_JOINTLIMITS_H

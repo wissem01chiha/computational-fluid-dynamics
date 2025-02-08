@@ -21,7 +21,6 @@ public:
     bool isA(const char* name) override;
     void parse(const tinyxml2::XMLElement* xml) override;
     std::shared_ptr<Color> get() override;
-
 private:
     std::shared_ptr<Color> p_;
 };

@@ -39,7 +39,7 @@ class Inertia : public PropertyBase, public GeometryBase {
   void setIyy(double iyy_);
   void setIyz(double iyz_);
   void setIzz(double izz_);
- private:
+private:
   std::shared_ptr<Pose> origin;
   double mass;
   double ixx, ixy, ixz, iyy, iyz, izz;

@@ -3,11 +3,12 @@
 
 // Copyright 2025 Wissem CHIHA
 
-#include <memory>
 #include "geometry_base.h"
+#include "box.h"
 #include "parser_base.h"
 #include "utils.h"
-#include "box.h"
+#include <memory>
+
 
 /**
  * @brief Parser for Box geometry, inherits from ParserBase<Box>

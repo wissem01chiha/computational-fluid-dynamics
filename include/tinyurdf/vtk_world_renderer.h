@@ -7,11 +7,11 @@
 #include "world.h"
 
 template<typename... PropertyBase>
-class vtkWorldRenderer : public RendererBase<World<PropertyBase...>>
+class VtkWorldRenderer : public RendererBase<World<PropertyBase...>>
 {
 public:
-    vtkWorldRenderer ();
-    ~vtkWorldRenderer();
+    VtkWorldRenderer ();
+    ~VtkWorldRenderer();
 private:
 };
 #endif // TINYURDF_WORLD_RENDERER_H_

@@ -43,7 +43,6 @@ public:
   void print(std::ostream& os) override;
   std::shared_ptr<GeometryBase> get() override;
   ~GeometryParser();
-
 private:
   std::shared_ptr<GeometryBase> p_;
 };

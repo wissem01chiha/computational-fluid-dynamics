@@ -27,6 +27,7 @@ Table of Contents
 - [💻 Build](#-build)
 - [🛠️ Examples](#️-examples)
 - [🚀 Releases](#-releases)
+- [Related Projects](#related-projects)
 - [🤝 Contribution](#-contribution)
 - [📜 License](#-license)
 - [🎓Citing](#citing)
@@ -223,6 +224,11 @@ alternatively, we can render the model with customization options using the buil
 ## 🚀 Releases
 
 - **libtinyurdf-1.0.0** (september 2024): first release.
+
+## Related Projects
+
+- [urdf-vis](https://github.com/openrr/urdf-viz) 
+- [urdf-importer](https://github.com/Unity-Technologies/URDF-Importer)
 
 ## 🤝 Contribution  
 

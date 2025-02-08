@@ -35,7 +35,6 @@ class InertiaParser : public ParserBase<Inertia> {
   void parse(const tinyxml2::XMLElement* xml) override;
   std::shared_ptr<Inertia> get() override;
   ~InertiaParser() override = default;
-
 private:
   std::shared_ptr<Inertia> p_;
 };
