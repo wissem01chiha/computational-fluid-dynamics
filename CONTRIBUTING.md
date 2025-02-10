@@ -55,8 +55,9 @@ Here are some key tasks where contributions are needed:
 These additional features would improve the library:
 
 - [ ] Add a custom project logo.
-- [ ] Create a pipeline to deploy the library upon each release to **vcpkg** and **Conan Center** package managers.
-- [ ] check/test the [docker](Dockerfile) pipline build status and create a custom workflow
+- [ ] Create a pipeline to deploy the library upon each release to **vcpkg** and **Conan Center** package managers. 
+- [ ] check/test the [docker](./Dockerfile) pipline build status and create a custom workflow.
+  
 ---
 
 If you have any questions or need clarification, feel free to [email me](mailto:chihawissem08@gmail.com).

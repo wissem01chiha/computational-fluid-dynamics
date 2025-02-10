@@ -1,5 +1,5 @@
-#ifndef INCLUDE_TINYURDF_POSE_POSE_H_
-#define INCLUDE_TINYURDF_POSE_POSE_H_
+#ifndef INCLUDE_TINYURDF_POSE_H_
+#define INCLUDE_TINYURDF_POSE_H_
 
 // Copyright 2025 Wissem CHIHA
 
@@ -29,5 +29,4 @@ class Pose : public PropertyBase {
   Vec3 position;
   Rot3 rotation;
 };
-
 #endif  // INCLUDE_TINYURDF_POSE_POSE_H_

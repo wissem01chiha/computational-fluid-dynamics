@@ -1,5 +1,5 @@
-#ifndef TINYURDF_MODEL_H
-#define TINYURDF_MODEL_H
+#ifndef TINYURDF_MODEL_H_
+#define TINYURDF_MODEL_H_
 
 // Copyright 2025 Wissem CHIHA
 

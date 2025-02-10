@@ -1,5 +1,5 @@
-#ifndef INCLUDE_TINYURDF_COLORPARSER_H_
-#define INCLUDE_TINYURDF_COLORPARSER_H_
+#ifndef INCLUDE_TINYURDF_COLOR_PARSER_H_
+#define INCLUDE_TINYURDF_COLOR_PARSER_H_
 
 // Copyright 2025 Wissem CHIHA
 
@@ -24,5 +24,4 @@ public:
 private:
     std::shared_ptr<Color> p_;
 };
-
-#endif // INCLUDE_TINYURDF_COLORPARSER_H_
+#endif // INCLUDE_TINYURDF_COLOR_PARSER_H_

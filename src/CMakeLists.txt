@@ -54,7 +54,7 @@ endif()
 
 set(TINYURDF_INCLUDE_DIRECTORIES
     ${CMAKE_SOURCE_DIR}/include/tinyurdf
-    ${CMAKE_SOURCE_DIR}/extern
+    ${CMAKE_SOURCE_DIR}/thirdparty
 )
 
 if(USE_VTK)

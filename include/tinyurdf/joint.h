@@ -1,5 +1,5 @@
-#ifndef TINYURDF_JOINT_H
-#define TINYURDF_JOINT_H
+#ifndef TINYURDF_JOINT_H_
+#define TINYURDF_JOINT_H_
 
 // Copyright 2025 Wissem CHIHA
 

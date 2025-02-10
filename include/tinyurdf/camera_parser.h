@@ -1,5 +1,5 @@
-#ifndef INCLUDE_TINYURDF_CAMERAPARSER_H_
-#define INCLUDE_TINYURDF_CAMERAPARSER_H_
+#ifndef INCLUDE_TINYURDF_CAMERA_PARSER_H_
+#define INCLUDE_TINYURDF_CAMERA_PARSER_H_
 
 // Copyright 2025 Wissem CHIHA
 
@@ -33,4 +33,4 @@ public:
 private:
     std::shared_ptr<Camera> p_;
 };
-#endif // INCLUDE_TINYURDF_CAMERAPARSER_H
+#endif // INCLUDE_TINYURDF_CAMERA_PARSER_H_

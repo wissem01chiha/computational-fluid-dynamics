@@ -1,5 +1,5 @@
-#ifndef TINYURDF_MATERIAL_H
-#define TINYURDF_MATERIAL_H
+#ifndef TINYURDF_MATERIAL_H_
+#define TINYURDF_MATERIAL_H_
 
 // Copyright 2025 Wissem CHIHA
 

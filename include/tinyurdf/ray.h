@@ -1,5 +1,5 @@
-#ifndef INCLUDE_TINYURDF_CORE_RAY_H_
-#define INCLUDE_TINYURDF_CORE_RAY_H_
+#ifndef INCLUDE_TINYURDF_RAY_H_
+#define INCLUDE_TINYURDF_RAY_H_
 
 // Copyright 2025 Wissem CHIHA
 
@@ -47,5 +47,4 @@ private:
   int    vertical_samples;
   double resolution;
 };
-
-#endif  // INCLUDE_TINYURDF_CORE_RAY_H_
+#endif  // INCLUDE_TINYURDF_RAY_H_

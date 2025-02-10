@@ -1,5 +1,5 @@
-#ifndef TINYURDF_RENDRER_H_
-#define TINYURDF_RENDRER_H_
+#ifndef TINYURDF_RENDRER_BASE_H_
+#define TINYURDF_RENDRER_BASE_H_
 
 // Copyright 2025 Wissem CHIHA
 
@@ -23,4 +23,4 @@ protected:
     RendererBase(){};
     ~RendererBase(){};
 };
-#endif // TINYURDF_RENDRER_H_
+#endif // TINYURDF_RENDRER_BASE_H_

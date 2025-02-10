@@ -10,11 +10,10 @@ TinyURDF
 ![GitHub License](https://img.shields.io/github/license/wissem01chiha/tinyurdf)
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-  <img src="docs/demo/spot.png" alt="Spot robot visualization" style="width: 270px; height: 270px; object-fit: cover;">
-  <img src="docs/demo/iiwa14.png" alt="IIWA14 robot visualization" style="width: 270px; height: 270px; object-fit: cover;">
-  <img src="docs/demo/lwa4p.png" alt="LWA4P robot visualization" style="width: 270px; height: 270px; object-fit: cover;">
+  <img src="docs/assets/spot.png"   style="width: 270px; height: 270px; object-fit: cover;">
+  <img src="docs/assets/iiwa14.png" style="width: 270px; height: 270px; object-fit: cover;">
+  <img src="docs/assets/lwa4p.png"  style="width: 270px; height: 270px; object-fit: cover;">
 </div>
-
 
 TinyURDF is a modern, fast, cross-platform c++17 library for parsing and visualizing [URDF](https://wiki.ros.org/urdf/Tutorials) model files. It is designed to handle custom multibody configurations that existing tools do not support, including parallel multibodies or graph-like structures, it has no external dependencies and provides a stable and simple API for loading, visualizing, and verifying multijoint models.
 
@@ -237,7 +236,7 @@ see the [CONTRIBUTING](CONTRIBUTING.md) file for more information.  currently, t
 
 ## 📜 License  
   
-See the [LICENSE](LICENSE) file.  
+See the [LICENSE](./LICENSE) file.  
 
 ## 🎓Citing
  

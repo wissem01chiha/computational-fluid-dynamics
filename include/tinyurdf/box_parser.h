@@ -1,5 +1,5 @@
-#ifndef INCLUDE_TINYURDF_GEOMETRY_BOX_PARSER_H_
-#define INCLUDE_TINYURDF_GEOMETRY_BOX_PARSER_H_
+#ifndef INCLUDE_TINYURDF_BOX_PARSER_H_
+#define INCLUDE_TINYURDF_BOX_PARSER_H_
 
 // Copyright 2025 Wissem CHIHA
 
@@ -8,7 +8,6 @@
 #include "parser_base.h"
 #include "utils.h"
 #include <memory>
-
 
 /**
  * @brief Parser for Box geometry, inherits from ParserBase<Box>
@@ -28,4 +27,4 @@ public:
 private:
   std::shared_ptr<Box> p_;
 };
-#endif  // INCLUDE_TINYURDF_GEOMETRY_BOX_PARSER_H_
+#endif  // INCLUDE_TINYURDF_BOX_PARSER_H_
