@@ -1,4 +1,5 @@
-cmake_minimum_required(VERSION 3.22.1 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.8 FATAL_ERROR)
+
 find_package(pybind11 QUIET)
 if(pybind11_FOUND)
     message(STATUS "Pybind Found : ${pybind11_INCLUDE_DIRS}")

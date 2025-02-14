@@ -1,4 +1,5 @@
-cmake_minimum_required(VERSION 3.22.1 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.8 FATAL_ERROR)
+
 find_package(GTest QUIET)
 if(GTest_FOUND)
     message(STATUS "GTest found: ${GTest_DIR}")

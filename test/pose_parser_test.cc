@@ -1,6 +1,5 @@
 #include <gtest/gtest.h>
-#include "pose_parser.h"
-
+#include "internal/pose_parser.h"
 
 TEST(PoseTest, parseTest) {
     
@@ -15,7 +14,7 @@ TEST(PoseTest, parseTest) {
     PoseParser parser;
     parser.parse(element);
     const auto pose = parser.get();
-    parser.print(std::cout);
+    std::cout << parser.toString();
     
     Vec3 expectedPosition(1.0, 2.0, 3.0);
     double roll = 0.1, pitch = 0.2, yaw = 0.3;

@@ -1,7 +1,6 @@
-#include <memory>
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>  
-#include "urdf_parser.h"
+#include "internal/urdf_parser.h"
 
 namespace py = pybind11;
 
@@ -34,11 +33,6 @@ void init_pyurdf_parser(py::module &m) {
         .def("parse", static_cast<void (URDFParser::*)(const tinyxml2::XMLElement*)>(&URDFParser::parse),
              "Parse URDF from XML element")
 
-        .def("print", [](URDFParser &self) {
-            std::ostringstream os;
-            self.print(os);
-            return os.str();
-        }, "Prints the parser's state")
         .def("clear", &URDFParser::clear, "Clears the parser's state")
         .def("isA", &URDFParser::isA, "Check the type of the parser")
         .def("empty", &URDFParser::empty, "Check if the parser is empty")

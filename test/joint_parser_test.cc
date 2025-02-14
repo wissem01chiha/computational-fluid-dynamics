@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "joint_parser.h"
+#include "internal/joint_parser.h"
 
 TEST(JointParserTest, ConstrutorTest){
 
@@ -11,11 +11,10 @@ TEST(JointParserTest, ConstrutorTest){
     
     JointParser parser;
     parser.parse(doc.FirstChildElement("joint"));
-    parser.print(std::cout);
+    std::cout << parser.toString();
     auto parsedData = parser.get();
     ASSERT_EQ(parsedData->isA("joint"), true);
     ASSERT_EQ(std::string(parsedData->getName()), "front_rail_joint");
     auto t = parsedData->getTransform();
     ASSERT_EQ(t.empty(), false);
-
 };

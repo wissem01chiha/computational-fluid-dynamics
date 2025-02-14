@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
-#include "link.h"
-#include "box.h"
+#include "core/link.h"
+#include "core/box.h"
 
 TEST(LinkTest, TestGlobal) {
 
@@ -14,7 +14,6 @@ TEST(LinkTest, TestGlobal) {
     box->setOrigin(10,20,30);
     visual->setGeometry(box);
     link.setVisual(visual);
-
 
     EXPECT_EQ(link.getName(), "Link_for_test");
     EXPECT_TRUE(link.getVisual() != nullptr);

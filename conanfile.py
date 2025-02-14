@@ -4,16 +4,16 @@ from conan.tools.cmake import CMakeToolchain, CMake, cmake_layout, CMakeDeps
 class CompressorRecipe(ConanFile):
     name = "tinyurdf"
     version = "1.0.0"
-    
     license = "MIT License"
     author = "Wissem CHIHIA  chihawissem08@gmail.com"
     url = "https://github.com/wissem01chiha/tinyurdf"
-    description = "A Modern C++ Library for Parsing and Visualizing URDF Model Files"
+    description = "A modern C++ library for parsing URDF model files with Python bindings"
     
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False], "fPIC": [True, False]}
     default_options = {"shared": False, "fPIC": True}
-    exports_sources = "cmake/*", "extern/*", "include/*", "src/*", "CMakeLists.txt", "test/*", "examples/*"
+    exports_sources = "cmake/*", "thirdparty/*","scripts/src/*",
+    "python/src/*", "include/*", "src/*", "CMakeLists.txt", "test/*", "examples/*"
 
     def config_options(self):
         if self.settings.os == "Windows":
@@ -38,4 +38,4 @@ class CompressorRecipe(ConanFile):
         cmake.install()
 
     def package_info(self):
-        self.cpp_info.libs = ["hello"]
+        self.cpp_info.libs = [""]

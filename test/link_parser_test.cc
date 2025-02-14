@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "link_parser.h"
+#include "internal/link_parser.h"
 
 TEST(LinkParserTest, ParserTest){
 
@@ -12,10 +12,10 @@ TEST(LinkParserTest, ParserTest){
     LinkParser parser;
     const tinyxml2::XMLElement *xml = doc.FirstChildElement("model");
     parser.parse(xml->FirstChildElement("link"));
-    parser.print(std::cout);
+    std::cout << parser.toString();
     const auto linkdata = parser.get();
     auto link_collison = linkdata->getCollision();
-    link_collison->print(std::cout);
+    std::cout << link_collison->toString();
     
     ASSERT_NE(linkdata, nullptr); 
 };

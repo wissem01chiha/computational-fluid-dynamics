@@ -8,15 +8,8 @@ RUN apt-get update && apt-get install -y \
     ninja-build \
     git \
     libeigen3-dev \
-    libvtk9-dev \
-    qtbase5-dev \
-    qtchooser \
-    qt5-qmake \
-    qtbase5-dev-tools \
     libgtest-dev \
-    pybind11-dev \
-    mpich \
-    libmpich-dev
+    pybind11-dev
 
 RUN cd /usr/src/gtest && \
     cmake . && \

@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "material_parser.h"
+#include "internal/material_parser.h"
 
 TEST(MaterialParserTest, ParseTest) {
 
@@ -19,6 +19,6 @@ TEST(MaterialParserTest, ParseTest) {
     parser.parse(doc.FirstChildElement("material"));
 
     auto material = parser.get();
-    parser.print(std::cout);
+    std::cout << parser.toString();
     ASSERT_NE(material, nullptr);
 }

@@ -1,13 +1,12 @@
 #include <gtest/gtest.h>
-#include "version.h"
-#include <iostream>
+#include "internal/version.h"
 
 TEST(VersionTest, ConstructorAndGetters) {
 
     const char* version_string = "1.2"; 
 
     Version version(version_string);  
-    version.print(std::cout);
+    std::cout << version.toString();
     
     EXPECT_EQ(version.getMajor(), 1);
     EXPECT_EQ(version.getMinor(), 2);

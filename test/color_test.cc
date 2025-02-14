@@ -1,10 +1,9 @@
 #include <gtest/gtest.h>
-#include "color.h"
-#include <iostream>
+#include "core/color.h"
 
 TEST(ColorTest, DefaultConstructor) {
     Color color;  
-    color.print(std::cout);
+    std::cout << color.toString();
     
     EXPECT_EQ(color.getR(), 0.0);
     EXPECT_EQ(color.getG(), 0.0);

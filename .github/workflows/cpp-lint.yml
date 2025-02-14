@@ -7,7 +7,6 @@ on:
   pull_request:
     branches:
       - main
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,7 +24,8 @@ jobs:
       - name: Install cpplint
         run: |
           sudo pip3 install cpplint
-
+          
+      # https://stackoverflow.com/a/74896123/23307462
       - name: Run cpplint
         run: |
-          cpplint include/**/*.cpp src/**/*.cpp script/**/*.cpp
+          cpplint --quiet --counting=detailed --linelength=120 --recursive include/ src/

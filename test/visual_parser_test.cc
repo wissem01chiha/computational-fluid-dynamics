@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "visual_parser.h"
+#include "internal/visual_parser.h"
 
 TEST(VisualParserTest, ParseTest) {
 
@@ -22,7 +22,7 @@ TEST(VisualParserTest, ParseTest) {
 
   VisualParser parser;
   parser.parse(doc.FirstChildElement("visual"));
-  parser.print(std::cout);
+  std::cout << parser.toString();
 
   auto parsedData = parser.get();
   ASSERT_NE(parsedData, nullptr);

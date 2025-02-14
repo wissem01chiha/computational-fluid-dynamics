@@ -1,5 +1,8 @@
-cmake_minimum_required(VERSION 3.22.1 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.8 FATAL_ERROR)
+
+
 enable_testing()
+
 set(TINYURDF_TEST_SOURCES
     geometry_parser_test.cc
     inertia_parser_test.cc
@@ -28,6 +31,7 @@ if(USE_VTK)
         vtk_model_renderer_test.cc
     )
 endif(USE_VTK)
+
 foreach(TEST_SOURCE_FILE IN LISTS TINYURDF_TEST_SOURCES)
     get_filename_component(TEST_EXECUTABLE_NAME ${TEST_SOURCE_FILE} NAME_WE)
     add_executable(${TEST_EXECUTABLE_NAME} ${TEST_SOURCE_FILE})

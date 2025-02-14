@@ -4,7 +4,7 @@
 DOXYFILE_ENCODING       = UTF-8
 PROJECT_NAME            = "TinyURDF"
 PROJECT_NUMBER          = 1.0.0
-PROJECT_BRIEF           = "A Modern C++ Library for Parsing and Visualizing URDF Model Files"
+PROJECT_BRIEF           = "A modern C++ library for parsing URDF model files with Python bindings"
 PROJECT_LOGO           = docs/assets/project_logo.png
 PROJECT_ICON           = docs/assets/favicon.svg
 OUTPUT_DIRECTORY        = ./docs 
@@ -14,7 +14,6 @@ HTML_EXTRA_STYLESHEET  = docs/styles/doxygen-awesome.css
 SHOW_NAMESPACES         = YES
 SEARCHENGINE            = YES
 RTF_HYPERLINKS          = YES
-RTF_EXTRA_FILES         = docs/assets/spot.png
 FULL_SIDEBAR            = YES
 GENERATE_TREEVIEW       = YES
 HTML_COLORSTYLE         = LIGHT
@@ -38,6 +37,7 @@ INPUT                  =    ./src \
                             ./CHANGELOG.md \
                             ./INSTALL.md \
                             ./LICENSE.txt \
+                            ./docs/RESSOURCES.md \
                             ./docs/assets 
 
 INPUT_ENCODING         = UTF-8

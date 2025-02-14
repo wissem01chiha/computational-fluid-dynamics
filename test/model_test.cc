@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "model.h"
+#include "core/model.h"
 
 TEST(ModelTest, TestGetName) {
 

@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.8 FATAL_ERROR)
+file(GLOB PYTHON_SOURCES *.cc)
+foreach(PYTHON_SOURCE_FILE IN LISTS PYTHON_SOURCES)
+    get_filename_component(PYTHON_EXECUTABLE_NAME ${PYTHON_SOURCE_FILE} NAME_WE)
+    pybind11_add_module(${PYTHON_EXECUTABLE_NAME} ${PYTHON_SOURCE_FILE})
+    target_link_libraries(${PYTHON_EXECUTABLE_NAME} PRIVATE tinyurdf)
+endforeach()

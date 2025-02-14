@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "model_parser.h"
+#include "internal/model_parser.h"
 
 TEST(ModelParserTest, ParseTest) {
     
@@ -10,5 +10,5 @@ TEST(ModelParserTest, ParseTest) {
     }
     ModelParser mp;  
     mp.parse(doc.FirstChildElement("model"));
-    mp.print(std::cout);
+    std::cout << mp.toString();
 }

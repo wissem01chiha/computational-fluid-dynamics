@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "pose.h"
+#include "core/pose.h"
 
 #define M_PI  3.14159265358979323846
 

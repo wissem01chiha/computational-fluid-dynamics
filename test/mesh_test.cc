@@ -1,6 +1,5 @@
 #include <gtest/gtest.h>
-#include "mesh.h" 
-#include <iostream>
+#include "core/mesh.h" 
 
 class MeshTest : public ::testing::Test {
 protected:
@@ -13,5 +12,5 @@ TEST_F(MeshTest, print) {
     mesh.setFilename("../test/valid_path.txt");
     mesh.setScale(0.5, 0.5, 0.5);
 
-    mesh.print(std::cout);
+    std::cout << mesh.toString();
 }

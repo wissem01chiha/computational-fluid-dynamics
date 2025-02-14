@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "property_parser.h"
+#include "common/property_parser.h"
 
 TEST(PropertyParserTest, ParseDoubleAttributes) {
 
@@ -12,7 +12,7 @@ TEST(PropertyParserTest, ParseDoubleAttributes) {
 
     PropertyParser<double> parser;
     parser.parse(doc.FirstChildElement("controller"));
-    parser.print(std::cout);
+    std::cout << parser.toString();
 
     auto parsedData = parser.get();
     ASSERT_EQ(parsedData->size(), 3);
@@ -32,7 +32,7 @@ TEST(PropertyParserTest, ParseStringAttributes) {
 
     PropertyParser<std::string> parser;
     parser.parse(doc.FirstChildElement("controller"));
-    parser.print(std::cout);
+    std::cout << parser.toString();
     
     auto parsedData = parser.get();
     ASSERT_EQ(parsedData->size(), 2);

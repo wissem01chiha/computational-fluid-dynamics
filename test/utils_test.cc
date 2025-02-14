@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "utils.h"
+#include "utility/utils.h"
 
 TEST(Str2arrayTest, ValidInputSinglePrecision){
 

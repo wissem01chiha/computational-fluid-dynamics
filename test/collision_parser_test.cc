@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "collision_parser.h"
+#include "internal/collision_parser.h"
 
 TEST(CollisionParserTest, ParseTest) {
 
@@ -17,7 +17,7 @@ TEST(CollisionParserTest, ParseTest) {
 
   CollisionParser parser;
   parser.parse(doc.FirstChildElement("collision"));
-  parser.print(std::cout);
+  std::cout << parser.toString();
 
   auto parsedData = parser.get();
   ASSERT_NE(parsedData, nullptr);

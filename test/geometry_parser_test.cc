@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "geometry_parser.h"
+#include "internal/geometry_parser.h"
 
 TEST(GeometryParserTest, ParseTest) {
 
@@ -14,7 +14,7 @@ TEST(GeometryParserTest, ParseTest) {
 
   GeometryParser parser;
   parser.parse(doc.FirstChildElement("geometry"));
-  parser.print(std::cout);
+  std::cout << parser.toString();
 
   auto parsedData = parser.get();
   ASSERT_NE(parsedData, nullptr);
@@ -39,7 +39,7 @@ TEST(GeometryParserTest, ParseTestfromFile) {
 
   GeometryParser parser;
   parser.parse(geometry);
-  parser.print(std::cout);
+  std::cout << parser.toString();
 
   auto parsedData = parser.get();
   ASSERT_NE(parsedData, nullptr);
