@@ -5,6 +5,7 @@ TinyURDF
 [![cmake-build](https://github.com/wissem01chiha/tinyurdf/actions/workflows/cmake-build.yml/badge.svg)](https://github.com/wissem01chiha/tinyurdf/actions/workflows/cmake-build.yml)
 [![build-docs](https://github.com/wissem01chiha/tinyurdf/actions/workflows/build-docs.yml/badge.svg)](https://github.com/wissem01chiha/tinyurdf/actions/workflows/build-docs.yml)
 [![cpplint](https://github.com/wissem01chiha/tinyurdf/actions/workflows/cpp-lint.yml/badge.svg)](https://github.com/wissem01chiha/tinyurdf/actions/workflows/cpp-lint.yml)
+[![conan-build](https://github.com/wissem01chiha/tinyurdf/actions/workflows/conan-build.yml/badge.svg)](https://github.com/wissem01chiha/tinyurdf/actions/workflows/conan-build.yml)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/t/wissem01chiha/tinyurdf)
 ![GitHub last commit](https://img.shields.io/github/last-commit/wissem01chiha/tinyurdf)
 ![GitHub License](https://img.shields.io/github/license/wissem01chiha/tinyurdf)
