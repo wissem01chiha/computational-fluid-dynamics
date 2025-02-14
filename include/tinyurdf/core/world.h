@@ -1,5 +1,5 @@
-#ifndef INCLUDE_TINYURDF_WORLD_H_
-#define INCLUDE_TINYURDF_WORLD_H_
+#ifndef INCLUDE_TINYURDF_CORE_WORLD_H_
+#define INCLUDE_TINYURDF_CORE_WORLD_H_
 
 // Copyright 2025 Wissem CHIHA
 
@@ -35,4 +35,4 @@ private:
   std::shared_ptr<std::string> name = nullptr;
   std::vector<Entity<PropertyBase...>> models;
 };
-#endif //  TINYURDF_WORLD_H_
+#endif //  INCLUDE_TINYURDF_CORE_WORLD_H_

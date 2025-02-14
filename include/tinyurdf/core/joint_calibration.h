@@ -8,14 +8,14 @@
 
 class JointCalibration : public PropertyBase {
  public:
-   JointCalibration();
-   bool isA(const char* name) const override;
-   std::string toString() const override;
-   void clear() override;
-   void setRising(double r);
-   void setFalling(double f);
-   void setReferencePosition(double rp);
+  JointCalibration();
+  bool isA(const char* name) const override;
+  std::string toString() const override;
+  void clear() override;
+  void setRising(double r);
+  void setFalling(double f);
+  void setReferencePosition(double rp);
  private:
-   double referencePosition, rising, falling;
+  double referencePosition, rising, falling;
 };
 #endif // INCLUDE_TINYURDF_CORE_JOINT_CALIBRATION_H_

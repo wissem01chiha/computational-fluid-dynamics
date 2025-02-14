@@ -72,7 +72,19 @@ cmake -G Ninja \
 
 TinyURDF will soon be available for installation via **vcpkg**, **Conan**, and **CMake FetchContent**.  
 
+##  Prerequisites
 
+1. C++17 compatible compiler (GCC 7.1+, Clang 5.0+, MSVC 2017+)
+2. CMake (version 3.14+)
+## Dependencies
+
+TinyURDF currently depends on the following libraries:
+- [TinyXML2](https://github.com/leethomason/tinyxml2)
+- [loguru](https://github.com/emilk/loguru)
+- [Eigen3](https://eigen.tuxfamily.org)
+- [cxxopts](https://github.com/jarro2783/cxxopts)
+
+These dependencies are automatically fetched and compiled during the build process.  
 
 
 

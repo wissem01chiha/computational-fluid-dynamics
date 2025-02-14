@@ -1,5 +1,5 @@
-#ifndef INCLUDE_TINYURDF_COLLISION_H_
-#define INCLUDE_TINYURDF_COLLISION_H_
+#ifndef INCLUDE_TINYURDF_CORE_COLLISION_H_
+#define INCLUDE_TINYURDF_CORE_COLLISION_H_
 
 // Copyright 2025 Wissem CHIHA
 
@@ -8,9 +8,8 @@
 #include "common/geometry_base.h"
 #include "core/pose.h"
 
-class Collision : public PropertyBase 
-{
-public:
+class Collision : public PropertyBase {
+ public:
     Collision();
     bool isA(const char* name) const override;
     void clear() override;
@@ -19,7 +18,7 @@ public:
     std::shared_ptr<GeometryBase> getGeometry() const;
     void setOrigin(std::shared_ptr<Pose> o_);
     void getOrigin(double* xyz) const;
-private:
+ private:
     std::shared_ptr<GeometryBase> geometry;
     std::shared_ptr<Pose> origin;
 };

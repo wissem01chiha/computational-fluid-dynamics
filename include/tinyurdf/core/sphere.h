@@ -1,5 +1,5 @@
-#ifndef INCLUDE_TINYURDF_GEOMETRY_SPHERE_H_
-#define INCLUDE_TINYURDF_GEOMETRY_SPHERE_H_
+#ifndef INCLUDE_TINYURDF_CORE_SPHERE_H_
+#define INCLUDE_TINYURDF_CORE_SPHERE_H_
 
 // Copyright 2025 Wissem CHIHA
 
@@ -25,4 +25,4 @@ class Sphere : public GeometryBase {
   double radius;
 };
 
-#endif  // INCLUDE_TINYURDF_GEOMETRY_SPHERE_H_
+#endif  // INCLUDE_TINYURDF_CORE_SPHERE_H_

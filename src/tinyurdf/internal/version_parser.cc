@@ -34,5 +34,5 @@ const char *VersionParser::getTypename() const
     return "version";
 }
 VersionParser::~VersionParser(){
-    p_->~Version();
+    p_.reset();
 };

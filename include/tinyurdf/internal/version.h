@@ -3,6 +3,7 @@
 
 // Copyright 2025 Wissem CHIHA
 
+#include <memory>
 #include <vector>
 #include <loguru/loguru.hpp>
 #include "common/property_base.h"

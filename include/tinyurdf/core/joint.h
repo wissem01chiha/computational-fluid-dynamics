@@ -1,5 +1,5 @@
-#ifndef TINYURDF_JOINT_H_
-#define TINYURDF_JOINT_H_
+#ifndef INCLUDE_TINYURDF_CORE_JOINT_H_
+#define INCLUDE_TINYURDF_CORE_JOINT_H_
 
 // Copyright 2025 Wissem CHIHA
 
@@ -18,7 +18,7 @@
 #include "utility/utils.h"
 
 class Joint : public ObjectBase{
-public:
+ public:
   enum class Type
   {
     UNKNOWN, REVOLUTE, CONTINUOUS, PRISMATIC, FLOATING, PLANAR, FIXED, 
@@ -62,4 +62,4 @@ private:
   std::shared_ptr<JointCalibration> calibration;
   std::shared_ptr<JointMimic> mimic;
 };
-#endif // TINYURDF_JOINT_H
+#endif // INCLUDE_TINYURDF_CORE_JOINT_H

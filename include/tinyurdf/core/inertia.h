@@ -1,5 +1,5 @@
-#ifndef INCLUDE_TINYURDF_INERTIA_H_
-#define INCLUDE_TINYURDF_INERTIA_H_
+#ifndef INCLUDE_TINYURDF_CORE_INERTIA_H_
+#define INCLUDE_TINYURDF_CORE_INERTIA_H_
 
 // Copyright 2025 Wissem CHIHA
 
@@ -41,4 +41,4 @@ class Inertia : public PropertyBase, public GeometryBase {
   double mass;
   double ixx, ixy, ixz, iyy, iyz, izz;
 };
-#endif  // INCLUDE_TINYURDF_INERTIA_H_
+#endif  // INCLUDE_TINYURDF_CORE_INERTIA_H_

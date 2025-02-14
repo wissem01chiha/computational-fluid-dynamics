@@ -1,5 +1,5 @@
-#ifndef INCLUDE_TINYURDF_BOX_H_
-#define INCLUDE_TINYURDF_BOX_H_
+#ifndef INCLUDE_TINYURDF_CORE_BOX_H_
+#define INCLUDE_TINYURDF_CORE_BOX_H_
 
 // Copyright 2024 Wissem CHIHA
 
@@ -24,4 +24,4 @@ class Box : public GeometryBase{
  private:
   Vec3 dim;
 };
-#endif  // INCLUDE_TINYURDF_BOX_H_
+#endif  // INCLUDE_TINYURDF_CORE_BOX_H_

@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "homepage": "https://github.com/wissem01chiha/tinyurdf",
     "license": "MIT",
-    "description": "A modern C++ library for parsing and visualizing urdf models",
+    "description": "A modern C++ library for parsing URDF model files with Python bindings",
     "dependencies": [
         {
             "name" : "vcpkg-cmake",

@@ -1,12 +1,12 @@
-#ifndef TINYURDF_JOINT_MIMIC_H
-#define TINYURDF_JOINT_MIMIC_H
+#ifndef INCLUDE_TINYURDF_CORE_JOINT_MIMIC_H
+#define INCLUDE_TINYURDF_CORE_JOINT_MIMIC_H
 
 // Copyright 2025 Wissem CHIHA
 
 #include "common/property_base.h"
 
 class JointMimic : public PropertyBase {
-public:
+ public:
     JointMimic();
     bool isA(const char* name) const override;
     std::string toString() const override;
@@ -14,8 +14,8 @@ public:
     void setOffset(double o);
     void setMultiplier(double m);
     void setName(std::string& n_);
-private:
+ private:
     double offset, multiplier;
     std::string name;
 };
-#endif // TINYURDF_JOINT_MIMIC_H_
+#endif // INCLUDE_TINYURDF_CORE_JOINT_MIMIC_H_

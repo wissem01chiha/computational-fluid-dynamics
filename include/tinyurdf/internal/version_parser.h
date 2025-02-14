@@ -13,13 +13,14 @@
  *       but we maintain a consistent layout to adhere to the base parser class.
  */
 class VersionParser final {
-public:
+ public:
     VersionParser();
     void parse(const tinyxml2::XMLDocument doc);
     const char* getTypename() const;
     std::shared_ptr<Version> get() const { return p_; }
     ~VersionParser();
-private:
+    
+ private:
     std::shared_ptr<Version> p_;
 };
 #endif // TINYURDF_VERSION_PARSER_H_

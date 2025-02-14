@@ -1,3 +1,0 @@
-conan remove tinyurdf -f
-conan install . --build=missing
-conan build .

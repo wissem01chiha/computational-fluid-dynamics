@@ -1,5 +1,5 @@
-#ifndef INCLUDE_TINYURDF_VISUAL_H_
-#define INCLUDE_TINYURDF_VISUAL_H_
+#ifndef INCLUDE_TINYURDF_CORE_VISUAL_H_
+#define INCLUDE_TINYURDF_CORE_VISUAL_H_
 
 // Copyright 2025 Wissem CHIHA
 
@@ -32,4 +32,4 @@ class Visual : public PropertyBase {
   std::string material_name;
   std::shared_ptr<Material> material;
 };
-#endif // INCLUDE_TINYURDF_VISUAL_H_
+#endif // INCLUDE_TINYURDF_CORE_VISUAL_H_
