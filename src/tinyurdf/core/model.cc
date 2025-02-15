@@ -99,14 +99,45 @@ std::vector<std::shared_ptr<Link>> Model::getLinks() const
   return this->links;
 }
 
-std::vector<Material> Model::getMaterials() const
+std::vector<std::shared_ptr<Material>> Model::getMaterials() const
 {
-    return std::vector<Material>();
+  
+  std::vector<std::shared_ptr<Material>> mts;
+  #ifdef USE_OPENMP
+  #pragma omp parallel
+  {
+    std::vector<std::shared_ptr<Material>> local_mts;
+      
+    #pragma omp for nowait
+    for (size_t i = 0; i < this->links.size(); ++i) {
+        local_mts.push_back(this->links[i]->getMaterial());
+    }
+    
+    #pragma omp critical
+    {
+      mts.insert(mts.end(), local_mts.begin(), local_mts.end());
+    }
+  }
+  #else
+    for (const auto& lk : this->links) {
+        mts.push_back(lk->getMaterial());
+    }
+  #endif
+  return mts;
 }
+
 std::vector<std::string> Model::getMaterialsName() const
 {
-    return std::vector<std::string>();
+  std::vector<std::shared_ptr<Material>> mts = this->getMaterials();
+  std::vector<std::string> mts_str;
+  #ifdef USE_OPENMP
+
+  #else
+    for(const auto mt: mts){
+      mts_str.push_back(mt->getName());
+    }
+  #endif 
+  return mts_str;
 }
-Model::~Model()
-{
-}
+
+Model::~Model(){}

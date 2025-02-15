@@ -6,5 +6,5 @@ if exist %BUILD_DIR% (
 )
 if not exist %BUILD_DIR% mkdir %BUILD_DIR%
 cd %BUILD_DIR%
-cmake -G Ninja ..
+cmake -G Ninja -DCMAKE_BUILD_TYPE=Release ..
 ninja -j4

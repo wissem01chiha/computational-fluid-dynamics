@@ -21,7 +21,7 @@ void URDFParser::parse(const char *filename)
     }
     else {
         const tinyxml2::XMLElement *xml = doc.FirstChildElement("robot");
-        if(xml) {
+        if(!xml) {
             LOG_F(ERROR, "Error: This is not a valid URDF file format");
             return;
         }

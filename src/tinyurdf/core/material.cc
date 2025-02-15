@@ -28,6 +28,10 @@ void Material::setName(const std::string& name_) {
     }
 }
 
+std::string Material::getName() const { 
+    return name; 
+}
+
 void Material::setDensity(double d) {
     if (d > 0) {
         density = d;

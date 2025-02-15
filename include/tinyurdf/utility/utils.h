@@ -8,14 +8,9 @@
 #include <sstream>
 #include <Eigen/Dense>
 #include <loguru/loguru.hpp>
-#ifdef BUILD_3D_ENGINE
-    #include <glm/glm.hpp>
-    #include <glm/gtc/matrix_transform.hpp>
-    #include <glm/gtc/type_ptr.hpp>
-#endif
 #ifdef USE_OPENMP
-    #include <omp.h>
-#endif
+#include <omp.h>
+#endif 
 /**
  * @brief Base struct for 3D position vectors.
  */

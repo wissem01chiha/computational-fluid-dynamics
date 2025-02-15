@@ -38,8 +38,8 @@ INPUT                  =    ./src \
                             ./CHANGELOG.md \
                             ./INSTALL.md \
                             ./LICENSE.txt \
-                            ./docs/RESSOURCES.md \
-                            ./docs/TUTORIELS.md 
+                            ./docs/Ressources.md \
+                            ./docs/Tutoriels.md 
 
 INPUT_ENCODING         = UTF-8
 FILE_PATTERNS          = *.c \

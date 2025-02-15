@@ -1,9 +1,5 @@
 cmake_minimum_required(VERSION 3.8 FATAL_ERROR)
-
-set(SCRIPT_SOURCES
-    urdf-parse.cc
-)
-
+file(GLOB SCRIPT_SOURCES *.cc)
 foreach(SCRIPT_SOURCE_FILE IN LISTS SCRIPT_SOURCES)
     get_filename_component(SCRIPT_EXECUTABLE_NAME ${SCRIPT_SOURCE_FILE} NAME_WE)
     add_executable(${SCRIPT_EXECUTABLE_NAME} ${SCRIPT_SOURCE_FILE})

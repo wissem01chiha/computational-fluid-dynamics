@@ -2,6 +2,10 @@
 #define INCLUDE_TINYURDF_CORE_MODEL_H_
 
 // Copyright 2025 Wissem CHIHA
+
+#ifdef USE_OPENMP
+#include <omp.h>
+#endif 
 #include <vector>
 #include <string>
 #include <loguru/loguru.hpp>
@@ -37,7 +41,7 @@ class Model final : public ObjectBase{
      const std::string& child);
   std::vector<std::shared_ptr<Joint>> getJoints() const;
   std::vector<std::shared_ptr<Link>> getLinks() const;
-  std::vector<Material> getMaterials() const;
+  std::vector<std::shared_ptr<Material>> getMaterials() const;
   std::vector<std::string> getMaterialsName() const;
   ~Model();
 
