@@ -1,4 +1,5 @@
 #include "core/joint_limits.h"
+#include <sstream>
 
 JointLimits::JointLimits() 
     : lower(0.0), upper(0.0), effort(0.0), velocity(0.0) {}

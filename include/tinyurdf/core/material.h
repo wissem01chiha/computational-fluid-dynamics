@@ -3,8 +3,8 @@
 
 // Copyright 2025 Wissem CHIHA
 
-#include <filesystem>
 #include <loguru/loguru.hpp>
+#include <memory>
 #include "common/property_base.h"
 #include "core/color.h"
 

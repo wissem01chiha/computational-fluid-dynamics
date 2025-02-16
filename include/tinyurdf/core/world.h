@@ -7,11 +7,10 @@
 #include <loguru/loguru.hpp>
 #include "core/model.h"
 #include "common/object_base.h"
-#include "common/property_base.h"
 #include "core/pose.h"
 
 /**
- * @brief 
+ * @brief Base class for all subObjects in a world
  */
 template<typename... PropertyBase>
 class Entity : public ObjectBase
@@ -24,7 +23,7 @@ private:
 };
 
 /**
- * @brief 
+ * @brief Base class for models enviroment defintions
  */
 template<typename... PropertyBase>
 class World : public ObjectBase{

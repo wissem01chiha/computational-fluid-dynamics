@@ -3,7 +3,6 @@
 
 // Copyright 2025 Wissem CHIHA
 
-#include <type_traits>
 #include <memory>
 #include "core/pose.h"
 #include "core/material.h"

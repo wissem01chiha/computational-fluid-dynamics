@@ -1,4 +1,5 @@
 #include "core/cylinder.h"
+#include <sstream>
 
 Cylinder::Cylinder() {
     this->clear();
@@ -14,6 +15,7 @@ bool Cylinder::isA(const char* name) const  {
 }
 
 std::string Cylinder::toString() const   {
+
     std::ostringstream os;
     os << "Cylinder dimensions: [" << length << ", " << radius << "]";
     return os.str();

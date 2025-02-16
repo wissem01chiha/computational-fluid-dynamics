@@ -6,7 +6,6 @@
 #include <string>
 #include <memory>
 #include <loguru/loguru.hpp>
-#include "utility/utils.h"
 #include "core/pose.h"
 #include "common/property_base.h"
 #include "common/geometry_base.h"

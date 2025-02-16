@@ -1,5 +1,6 @@
 Ressources
 =====
+- [stl_reader-documentation](https://sreiter.github.io/stl_reader/stl__reader_8h.html)
 - [pybind11-documentation](https://pybind11.readthedocs.io/en/stable/)
 - [urdfdom-debian-package](https://docs.ros.org/en/diamondback/api/urdf/html/index.html)
 - [urdf-ros-wiki](https://wiki.ros.org/urdf)

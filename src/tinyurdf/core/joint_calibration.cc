@@ -1,4 +1,5 @@
 #include "core/joint_calibration.h"
+#include <sstream>
 
 JointCalibration::JointCalibration() 
     : referencePosition(0.0), rising(0.0), falling(0.0) {}

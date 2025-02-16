@@ -3,15 +3,10 @@
 
 // Copyright 2025 Wissem CHIHA
 
-#ifdef USE_OPENMP
-#include <omp.h>
-#endif 
 #include <vector>
 #include <string>
 #include <loguru/loguru.hpp>
 #include "common/object_base.h"
-#include "common/property_base.h"
-#include "utility/utils.h"
 #include "core/joint.h"
 #include "core/link.h"
 

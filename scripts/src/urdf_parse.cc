@@ -38,7 +38,7 @@
         if (log_enabled) {
             std::cout << model_->toString() << std::endl;
         }
-        LOG_F(INFO, "URDF model successfully parsed from: %s" , file_path );
+        LOG_F(INFO, "URDF model successfully parsed from: %s" , file_path.c_str() );
     } catch (const std::exception& e) {
         LOG_F(ERROR,  "Error: %s" , e.what() );
         return 1;

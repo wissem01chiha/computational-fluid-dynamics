@@ -1,4 +1,5 @@
 #include "core/joint_dynamics.h"
+#include <sstream>
 
 JointDynamics::JointDynamics() 
     : damping(0.0), friction(0.0), inertia(0.0) {}

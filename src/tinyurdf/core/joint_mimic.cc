@@ -1,4 +1,5 @@
 #include "core/joint_mimic.h"
+#include <sstream>
 
 JointMimic::JointMimic() 
     : offset(0.0), multiplier(1.0), name("") {}

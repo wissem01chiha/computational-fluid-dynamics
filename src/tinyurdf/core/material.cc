@@ -1,4 +1,5 @@
 #include "core/material.h"
+#include <filesystem>
 
 Material::Material()
 : name(""), texture_filename(""), density(1.0) {

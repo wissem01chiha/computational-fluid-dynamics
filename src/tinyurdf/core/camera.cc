@@ -111,7 +111,7 @@ bool Camera::empty() const
 }
 bool Camera::isA(const char *name) const
 {
-    return name=="camera";
+    return std::strcmp(name,"camera");
 }
 void Camera::clear()
 {

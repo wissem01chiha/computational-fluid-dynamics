@@ -8,10 +8,9 @@
  *  urdf_to_graphiz --file ./path/to/model/file [--log]
  */
 #include <cxxopts/cxxopts.hpp>
-#include "internal/urdf_parser.h"
+#include "tinyurdf/internal/urdf_parser.h"
 #include "core/model.h"
 #include <iostream>
-#include <fstream>
 
 void addChildLinkNames(std::shared_ptr<Link> link, std::string& str)
 {

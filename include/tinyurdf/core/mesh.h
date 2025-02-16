@@ -4,7 +4,6 @@
 // Copyright 2025 Wissem CHIHA
 
 #include <string>
-#include <filesystem>
 #include <loguru/loguru.hpp>
 #include "common/geometry_base.h"
 #include "core/color.h"

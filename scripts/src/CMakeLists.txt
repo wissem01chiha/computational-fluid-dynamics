@@ -4,7 +4,7 @@ foreach(SCRIPT_SOURCE_FILE IN LISTS SCRIPT_SOURCES)
     get_filename_component(SCRIPT_EXECUTABLE_NAME ${SCRIPT_SOURCE_FILE} NAME_WE)
     add_executable(${SCRIPT_EXECUTABLE_NAME} ${SCRIPT_SOURCE_FILE})
     target_include_directories(${SCRIPT_EXECUTABLE_NAME} PRIVATE 
-                                ${CMAKE_SOURCE_DIR}/tinyurdf
+                                ${CMAKE_SOURCE_DIR}/include
                                 ${CMAKE_SOURCE_DIR}/thirdparty
                             )
     target_link_libraries(${SCRIPT_EXECUTABLE_NAME} PRIVATE tinyurdf)

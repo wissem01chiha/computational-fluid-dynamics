@@ -1,4 +1,5 @@
 #include "core/mesh.h"
+#include <filesystem>
 
 Mesh::Mesh() {
     this->clear();

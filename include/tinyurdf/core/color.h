@@ -5,8 +5,6 @@
 
 #include "common/property_base.h"
 #include <loguru/loguru.hpp>
-#include <sstream> 
-#include <vector>
 
 class Color : public PropertyBase{
  public:

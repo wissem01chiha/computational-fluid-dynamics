@@ -1,4 +1,7 @@
 #include "core/color.h"
+#include <stdexcept>
+#include <vector>
+#include <sstream>
 
 Color::Color()
 {

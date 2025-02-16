@@ -1,24 +1,17 @@
-FROM ubuntu:22.04 AS build
+FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
+ENV CXX=/usr/bin/g++
 
 RUN apt-get update && apt-get install -y \
-    build-essential \
     cmake \
-    ninja-build \
     git \
-    libeigen3-dev \
-    libgtest-dev \
-    pybind11-dev
+    g++
 
-RUN cd /usr/src/gtest && \
-    cmake . && \
-    make 
-
-WORKDIR /app
-COPY . /app
+WORKDIR /workdir
+COPY . /workdir
 
 RUN rm -rf build && mkdir -p build && cd build && \
-    cmake -G Ninja ..  && \
-    ninja -j8 && \
-    ninja install
+    cmake -D CMAKE_C_COMPILER=gcc -D CMAKE_CXX_COMPILER=/usr/bin/g++ ..  && \
+    make -j8 && \
+    make install

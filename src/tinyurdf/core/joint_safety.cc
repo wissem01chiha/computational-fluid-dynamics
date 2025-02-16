@@ -1,4 +1,5 @@
 #include "core/joint_safety.h"
+#include <sstream>
 
 JointSafety::JointSafety()
     : soft_upper_limit(0.0),

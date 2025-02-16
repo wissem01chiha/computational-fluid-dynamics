@@ -4,7 +4,6 @@
 // Copyright 2025 Wissem CHIHA
 
 #include <memory>
-#include <stdexcept>
 #include <string>
 #include <vector>
 #include <loguru/loguru.hpp>

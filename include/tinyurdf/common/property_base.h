@@ -4,7 +4,6 @@
 // Copyright 2025 Wissem CHIHA
 
 #include <string>
-#include <sstream>
 
 class PropertyBase{
  public:
