@@ -47,7 +47,10 @@ class Joint : public ObjectBase{
   bool isChild(const char* name) const;
   bool isParent(const char* name) const;
   std::vector<std::shared_ptr<Pose>> getTransform() const;
+  std::vector<std::string> getChild() const;
+  std::vector<std::string> getParent() const;
   Vec3 getAxis() const;
+
 private: 
   Type           type;
   std::string    name;

@@ -186,6 +186,17 @@ std::vector<std::shared_ptr<Pose>> Joint::getTransform() const
 {
     return this->transform;
 }
+
+std::vector<std::string> Joint::getChild() const {
+    
+  return this->child;
+}
+
+std::vector<std::string> Joint::getParent() const {
+
+  return this->parent;
+}
+
 Vec3 Joint::getAxis() const
 {
     return axis;

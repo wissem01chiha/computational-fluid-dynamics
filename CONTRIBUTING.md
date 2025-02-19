@@ -51,6 +51,7 @@ Here are some key tasks where contributions are needed:
   - Density, and more
   - Precomputed Forward Kinematics 
   - Bounding Volume Hierarchy (BVH) for fast collision detection
+  
 ---
 
 ## Additional Features

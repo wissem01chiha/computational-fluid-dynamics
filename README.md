@@ -17,7 +17,7 @@ Official documentation can be found [here](https://wissem01chiha.github.io/tinyu
 
 ## Build  
 
-see the [Build](INSTALL.md) section for instructions.
+See the [Build](INSTALL.md) section for instructions.
  
 ## Contribution  
 

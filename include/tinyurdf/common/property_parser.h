@@ -14,6 +14,7 @@
  * Parses a single XML element where a property is defined by a list of values. 
  * These values can be numeric or strings. It fills a vector with these values 
  * and returns a pointer to it. The parser can handle any number of values.
+ * @tparam T data type can be char*, string , double, ...
  * @return An unordered map where keys are the attribute names 
  * (stored as std::string for safety by default) and values are of type T 
  * (which can be std::string, const char*, or double—only these types are acceptable).
@@ -31,64 +32,20 @@
  * This issue is currently ignored.
  * @todo Fix the bug related to mixed attribute property parsing.
  */
-template<typename T>
-class PropertyParser : public ParserBase<std::unordered_map<std::string,T>>
-{  
- public:
-    PropertyParser(){
-        p_ = std::make_shared<std::unordered_map<std::string,T>>();
-    };
+template <typename T>
+class PropertyParser : public ParserBase<std::unordered_map<std::string, T>> {
+public:
+    PropertyParser();
+    ~PropertyParser();
+    std::string toString() const override;
+    bool empty() const override;
+    void clear() override;
+    const char* getTypename() const override;
+    bool isA(const char* name) const override;
+    void parse(const tinyxml2::XMLElement* xml);
+    std::shared_ptr<std::unordered_map<std::string, T>> get() override;
 
-    std::string toString() const override {
-        std::ostringstream oss;
-        oss << "Parsed Property-Values = [";
-        bool first = true;
-        for (const auto& pair : *p_) {
-            if (!first) oss << ", ";
-            oss << pair.first << "=" << pair.second;
-            first = false;
-        }
-        oss << "]";
-        return oss.str();
-    }
-
-    bool empty() const override { 
-        return p_->empty();
-    }
-
-    void clear() override {
-        p_->clear();
-    }
-
-    const char* getTypename() const override {
-        return "property_value_parser";
-    }
-
-    bool isA(const char* name) const override {
-        return std::string(name) == "property_value_parser";
-    }
-
-    void parse(const tinyxml2::XMLElement* xml) 
-    {
-        ParserBase<std::unordered_map<std::string, T>>::parse(xml);
-        const tinyxml2::XMLAttribute* attr = xml->FirstAttribute();
-
-        while (attr) {
-                if constexpr (std::is_same_v<T, double>) {
-                    double val;
-                    str2double(attr->Value(), val);
-                    (*p_)[std::string(attr->Name())] = val;
-                } else if constexpr (std::is_same_v<T, std::string>) {
-                    (*p_)[std::string(attr->Name())] = std::string(attr->Value());
-                } else {
-                    LOG_F(ERROR, "failed to parse attribute: unsupported type for conversion");
-                }
-            attr = attr->Next();
-        }
-    }
-    std::shared_ptr<std::unordered_map<std::string,T>> get() override {return p_;}; 
-    ~PropertyParser(){};
- private:
-    std::shared_ptr<std::unordered_map<std::string,T>> p_;
+private:
+    std::shared_ptr<std::unordered_map<std::string, T>> p_;
 };
 #endif // INCLUDE_TINYURDF_COMMON_PROPERTY_PARSER_H_

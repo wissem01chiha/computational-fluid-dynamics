@@ -33,6 +33,7 @@ GENERATE_LATEX          = NO
 #---------------------------------------------------------------------------
 INPUT                  =    ./src \  
                             ./include \
+                            ./scripts \
                             ./README.md \
                             ./CONTRIBUTING.md \
                             ./CHANGELOG.md \

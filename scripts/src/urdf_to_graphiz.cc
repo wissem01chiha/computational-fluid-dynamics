@@ -9,56 +9,12 @@
  */
 #include <cxxopts/cxxopts.hpp>
 #include "tinyurdf/internal/urdf_parser.h"
-#include "core/model.h"
-#include <iostream>
+#include "tinyurdf/detail/internal_graph.h"
 
-void addChildLinkNames(std::shared_ptr<Link> link, std::string& str)
-{
-  std::ostringstream os;
-  os << "\"" << link->getName() << "\" [label=\"" << link->getName() << "\"];" << std::endl;
-  //for (std::vector<std::shared_ptr<Link>>::const_iterator child = link->child_links.begin(); child != link->child_links.end(); child++)
-  //addChildLinkNames(*child, os);
-}
-
-// void addChildJointNames(std::shared_ptr<Link> link, ofstream& os)
-// {
-//   double r, p, y;
-//   for (std::vector<std::shared_ptr<Link> >::const_iterator child = link->child_links.begin(); child != link->child_links.end(); child++){
-//     (*child)->parent_joint->parent_to_joint_origin_transform.rotation.getRPY(r,p,y);
-//     os << "\"" << link->name << "\" -> \"" << (*child)->parent_joint->name 
-//        << "\" [label=\"xyz: "
-//        << (*child)->parent_joint->parent_to_joint_origin_transform.position.x << " " 
-//        << (*child)->parent_joint->parent_to_joint_origin_transform.position.y << " " 
-//        << (*child)->parent_joint->parent_to_joint_origin_transform.position.z << " " 
-//         << "\\nrpy: " << r << " " << p << " " << y << "\"]" << endl;
-//     os << "\"" << (*child)->parent_joint->name << "\" -> \"" << (*child)->name << "\"" << endl;
-//      addChildJointNames(*child, os);
-//    }
-//  }
-
-
-// void printTree(std::shared_ptr<Link> link, std::string file)
-// {
-//   std::ofstream os;
-//    os.open(file.c_str());
-//    os << "digraph G {" << std::endl;
- 
-//   os << "node [shape=box];" << std::endl;
-//   addChildLinkNames(link, os);
-
-//    os << "node [shape=ellipse, color=blue, fontcolor=blue];" << std::endl;
-//   addChildJointNames(link, os);
- 
-//    os << "}" << std::endl;
-//    os.close();
-//  }
- 
- 
- 
 int main(int argc, char** argv)
 {
   if (argc != 2){
-    LOG_F(ERROR, "Usage: urdf_to_graphiz input.urdf" );
+    LOG_F(ERROR, "Usage: urdf_to_graphiz input_file.urdf" );
     return -1;
   }
  
@@ -82,6 +38,6 @@ int main(int argc, char** argv)
  
   // std::string command = "dot -Tpdf "+output+".gv  -o "+output+".pdf";
   // system(command.c_str());
-  std::cout << "Created file " << "test" << ".pdf" << std::endl;
+  LOG_F(INFO, "Created file .pdf" );
   return 0;
  }
